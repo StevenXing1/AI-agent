@@ -1,11 +1,11 @@
 question,answer,source
-我的订单多久发货,正常商品会在24小时内发货，预售商品请以详情页说明为准,sample-cn
-可以退货吗,签收后7天内支持无理由退货，商品需保持完好,sample-cn
-快递一直没有更新怎么办,请先确认物流单号是否正确，超过48小时无更新请联系在线客服,sample-cn
-如何修改收货地址,未发货订单可在订单详情页修改地址，已发货则无法修改,sample-cn
-支付失败怎么处理,建议先检查网络和余额后重试，也可以更换支付方式,sample-cn
-发票可以补开吗,订单完成后30天内可在订单页面申请电子发票补开,sample-cn
-会员有什么权益,会员可享受专属折扣、生日礼包和优先客服通道,sample-cn
-忘记密码怎么办,在登录页点击忘记密码，通过手机验证码或邮箱找回,sample-cn
-优惠券不能使用是为什么,请检查优惠券有效期、适用商品范围和最低消费门槛,sample-cn
-商品有质量问题怎么处理,请在售后页面提交问题描述和图片，我们会优先审核处理,sample-cn
+When will my order be shipped?,Standard items ship within 24 hours. For pre-order items please refer to the product detail page.,sample-en
+Can I return my order?,You can return items within 7 days of receipt for any reason as long as the product is in its original condition.,sample-en
+My tracking information has not updated. What should I do?,Please verify your tracking number is correct. If there is no update after 48 hours contact our online support.,sample-en
+How do I change my shipping address?,You can update the address on the order detail page before the order is shipped. Once shipped the address cannot be changed.,sample-en
+How do I handle a failed payment?,Please check your network connection and account balance and try again. You can also switch to a different payment method.,sample-en
+Can I get an invoice reissued?,You can request an electronic invoice within 30 days of order completion from the order detail page.,sample-en
+What are the benefits of being a member?,Members enjoy exclusive discounts birthday gifts and priority access to customer support.,sample-en
+I forgot my password. How can I recover it?,Click Forgot Password on the login page and follow the steps to recover via SMS verification code or email.,sample-en
+Why can I not use my coupon?,Please check the coupon expiry date applicable products and minimum spend requirement.,sample-en
+My product has a quality issue. What should I do?,Please submit a description and photos of the issue on the after-sales page and we will prioritize your case.,sample-en

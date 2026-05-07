@@ -21,7 +21,7 @@ function appendMessage(text, role = "bot") {
 async function refreshStats() {
   const res = await fetch("/api/admin/stats");
   const data = await res.json();
-  stats.textContent = `知识库条目: ${data.qa_count} | 已服务对话: ${data.chat_count}`;
+  stats.textContent = `Knowledge base entries: ${data.qa_count} | Conversations served: ${data.chat_count}`;
 }
 
 chatForm.addEventListener("submit", async (e) => {
@@ -39,9 +39,9 @@ chatForm.addEventListener("submit", async (e) => {
       body: JSON.stringify({ message }),
     });
     const data = await res.json();
-    appendMessage(`${data.answer} (匹配分数: ${data.score.toFixed(3)})`, "bot");
+    appendMessage(`${data.answer} (score: ${data.score.toFixed(3)})`, "bot");
   } catch (err) {
-    appendMessage("服务异常，请稍后重试。", "bot");
+    appendMessage("Service error. Please try again later.", "bot");
   }
   refreshStats();
 });
@@ -59,19 +59,19 @@ qaForm.addEventListener("submit", async (e) => {
   });
 
   if (res.ok) {
-    adminTip.textContent = "新增问答成功。";
+    adminTip.textContent = "Q&A entry added successfully.";
     qInput.value = "";
     aInput.value = "";
     refreshStats();
   } else {
-    adminTip.textContent = "新增失败，请检查输入。";
+    adminTip.textContent = "Failed to add. Please check your input.";
   }
 });
 
 uploadBtn.addEventListener("click", async () => {
   const file = csvFile.files[0];
   if (!file) {
-    adminTip.textContent = "请先选择 CSV 文件。";
+    adminTip.textContent = "Please select a CSV file first.";
     return;
   }
 
@@ -79,18 +79,18 @@ uploadBtn.addEventListener("click", async () => {
   formData.append("file", file);
   const res = await fetch("/api/admin/upload-csv", { method: "POST", body: formData });
   const data = await res.json();
-  adminTip.textContent = `CSV 导入完成，新增 ${data.inserted} 条。`;
+  adminTip.textContent = `CSV import complete. ${data.inserted} entries added.`;
   refreshStats();
 });
 
 reloadBtn.addEventListener("click", async () => {
   const res = await fetch("/api/admin/reload-model", { method: "POST" });
   if (res.ok) {
-    adminTip.textContent = "模型与知识库已重载。";
+    adminTip.textContent = "Model and knowledge base reloaded.";
   } else {
-    adminTip.textContent = "重载失败。";
+    adminTip.textContent = "Reload failed.";
   }
 });
 
-appendMessage("你好，我是你的 AI 客服助手，请问有什么可以帮你？", "bot");
+appendMessage("Hello! I'm your AI support assistant. How can I help you today?", "bot");
 refreshStats();

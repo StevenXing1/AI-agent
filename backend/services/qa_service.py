@@ -43,7 +43,7 @@ class QAService:
 
     def ask(self, message: str, db: Session) -> tuple[str, float, str]:
         if self.embeddings is None or not self.questions:
-            fallback = "知识库为空，请先导入问答数据后再试。"
+            fallback = "The knowledge base is empty. Please import QA data first."
             self._save_chat_log(db, message, fallback, "", 0.0)
             return fallback, 0.0, ""
 
@@ -57,7 +57,7 @@ class QAService:
         best_score = float(scores[best_idx])
 
         if best_score < settings.similarity_threshold:
-            reply = "我还不太确定这个问题，建议联系人工客服以获得更准确的帮助。"
+            reply = "I'm not sure about this question. Please contact a human agent for more accurate help."
             matched_question = ""
         else:
             reply = self.answers[best_idx]
