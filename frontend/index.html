@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 智能客服平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-one"></div>
+    <div class="bg-shape bg-two"></div>
+
+    <main class="layout">
+      <section class="panel hero">
+        <p class="kicker">AI CUSTOMER CARE</p>
+        <h1>智能客服中枢</h1>
+        <p>
+          用免费开源模型微调 + SQLite 知识库存储，构建可持续迭代的客服问答系统。
+        </p>
+        <div id="stats" class="stats">加载中...</div>
+      </section>
+
+      <section class="panel chat-panel">
+        <div class="chat-header">在线客服对话</div>
+        <div id="chatBox" class="chat-box"></div>
+        <form id="chatForm" class="chat-form">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="例如：我的订单多久发货？"
+            required
+          />
+          <button type="submit">发送</button>
+        </form>
+      </section>
+
+      <section class="panel admin-panel">
+        <div class="chat-header">知识库管理</div>
+        <form id="qaForm" class="stack-form">
+          <input id="qInput" type="text" placeholder="问题" required />
+          <textarea id="aInput" placeholder="答案" required></textarea>
+          <button type="submit">新增问答</button>
+        </form>
+
+        <div class="admin-actions">
+          <input id="csvFile" type="file" accept=".csv" />
+          <button id="uploadBtn" type="button">上传 CSV</button>
+          <button id="reloadBtn" type="button">重载模型</button>
+        </div>
+
+        <div id="adminTip" class="admin-tip"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
